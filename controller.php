@@ -28,7 +28,7 @@ class Controller extends Package {
 
     public function on_start() {
         $listener = Core::make('\Concrete\Package\CommunityStoreEventExample\Src\Event\Order');
-        Events::addListener('on_communitystore_order', array($listener, 'orderPlaced'));
+        Events::addListener('on_community_store_order', array($listener, 'orderPlaced'));
     }
 
 
