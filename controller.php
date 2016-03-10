@@ -27,8 +27,17 @@ class Controller extends Package {
     }
 
     public function on_start() {
-        $listener = Core::make('\Concrete\Package\CommunityStoreEventExample\Src\Event\Order');
-        Events::addListener('on_community_store_order', array($listener, 'orderPlaced'));
+        // orders
+        $orderlistener = Core::make('\Concrete\Package\CommunityStoreEventExample\Src\Event\Order');
+        Events::addListener('on_community_store_order', array($orderlistener, 'orderPlaced'));
+        Events::addListener('on_community_store_order_status_update', array($orderlistener, 'orderStatusUpdate'));
+
+        // products
+        $productlistener = Core::make('\Concrete\Package\CommunityStoreEventExample\Src\Event\Product');
+        Events::addListener('on_community_store_product_add', array($productlistener, 'productAdded'));
+        Events::addListener('on_community_store_product_update', array($productlistener, 'productUpdated'));
+        Events::addListener('on_community_store_product_delete', array($productlistener, 'productDeleted'));
+        Events::addListener('on_community_store_product_duplicate', array($productlistener, 'productDuplicated'));
     }
 
 
