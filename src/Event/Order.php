@@ -18,4 +18,10 @@ class Order
         $previousStatusHandle = $event->getPreviousStatusHandle();
         Log::addInfo('Order changed from: ' . $previousStatusHandle . ' to ' . $order->getStatusHandle());
     }
+
+    public function orderPaymentComplete($event)
+    {
+        $order = $event->getOrder();
+        Log::addInfo('Order payment complete. Transaction reference: ' . $order->getTransactionReference());
+    }
 }

@@ -30,6 +30,7 @@ class Controller extends Package {
         // orders
         $orderlistener = Core::make('\Concrete\Package\CommunityStoreEventExample\Src\Event\Order');
         Events::addListener('on_community_store_order', array($orderlistener, 'orderPlaced'));
+        Events::addListener('on_community_store_payment_complete', array($orderlistener, 'orderPaymentComplete'));
         Events::addListener('on_community_store_order_status_update', array($orderlistener, 'orderStatusUpdate'));
 
         // products
