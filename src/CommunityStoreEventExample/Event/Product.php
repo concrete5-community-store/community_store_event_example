@@ -1,5 +1,5 @@
 <?php
-namespace Concrete\Package\CommunityStoreEventExample\Src\Event;
+namespace Concrete\Package\CommunityStoreEventExample\Event;
 
 use Log;
 
