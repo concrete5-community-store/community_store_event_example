@@ -48,7 +48,7 @@ class Controller extends Package {
         Events::addListener('on_community_store_product_delete', array($productListener, 'productDeleted'));
         Events::addListener('on_community_store_product_duplicate', array($productListener, 'productDuplicated'));
 
-        // products
+        // cart
         $cartListener = $app->make('\Concrete\Package\CommunityStoreEventExample\Event\Cart');
         Events::addListener('on_community_store_cart_action', array($cartListener, 'cartAction'));
         Events::addListener('on_community_store_cart_pre_add', array($cartListener, 'cartPreAdd'));
